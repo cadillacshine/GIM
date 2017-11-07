@@ -1,5 +1,5 @@
 ﻿namespace GIM {
-    partial class Form1 {
+    partial class FrmDashboard {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,12 +23,19 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmDashboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1848, 1154);
+            this.Name = "FrmDashboard";
+            this.Text = "GIM - Dashboard";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
