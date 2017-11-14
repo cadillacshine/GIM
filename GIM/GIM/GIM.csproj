@@ -79,10 +79,12 @@
     </Compile>
     <Compile Include="ICRUD.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Status.cs" />
+    <Compile Include="StatusRepository.cs" />
     <Compile Include="UnitOfMeasure.cs" />
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
