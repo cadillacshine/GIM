@@ -49,11 +49,32 @@ namespace GIM {
         }
 
         public object[] findAll() {
-            throw new NotImplementedException();
+            List<Status> statuses = new List<Status>();
+            sqlcmd = new SqlCommand("SELECT StatusID, Name, ShortName, Description, Active FROM Status", Misc.getConn());
+            SqlDataReader dReader = sqlcmd.ExecuteReader();
+            Misc.connOpen();
+            while (dReader.Read()) {
+                status.statusID = dReader.GetInt32(0);
+                status.name = dReader.GetString(1);
+                status.shortName = dReader.GetString(2);
+                status.description = dReader.GetString(3);
+                status.active = dReader.GetBoolean(4);
+                statuses.Add(status);
+            }
+            dReader.Close();
+            return statuses.ToArray();
         }
 
         public object update(int id) {
-            throw new NotImplementedException();
+            sqlcmd = new SqlCommand("UPDATE Status SET Name=@Name, ShortName=@ShortName, Description=@Description, Active=@Active WHERE StatusID = '" + id + "' ", Misc.getConn());
+            sqlcmd.Parameters.AddWithValue("@Name", status.name);
+            sqlcmd.Parameters.AddWithValue("@ShortName", status.shortName);
+            sqlcmd.Parameters.AddWithValue("@Description", status.description);
+            sqlcmd.Parameters.AddWithValue("@Active", status.active);
+            sqlcmd.ExecuteNonQuery();
+            sqlcmd.Dispose();
+            return find(id);
+
         }
     }
 }

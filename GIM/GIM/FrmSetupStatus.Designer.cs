@@ -45,6 +45,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -72,10 +75,10 @@
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1515, 757);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1515, 974);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // controlNavigator1
@@ -108,13 +111,13 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 219);
+            this.gridControl1.Location = new System.Drawing.Point(3, 324);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1509, 499);
+            this.gridControl1.Size = new System.Drawing.Size(1509, 611);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -123,13 +126,14 @@
             // 
             this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
             this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colStatus,
             this.colShortName,
+            this.colDescription,
             this.colActive});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -145,7 +149,7 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 0;
-            this.colStatus.Width = 607;
+            this.colStatus.Width = 432;
             // 
             // colShortName
             // 
@@ -154,7 +158,7 @@
             this.colShortName.Name = "colShortName";
             this.colShortName.Visible = true;
             this.colShortName.VisibleIndex = 1;
-            this.colShortName.Width = 294;
+            this.colShortName.Width = 247;
             // 
             // colActive
             // 
@@ -163,8 +167,8 @@
             this.colActive.FieldName = "Active";
             this.colActive.Name = "colActive";
             this.colActive.Visible = true;
-            this.colActive.VisibleIndex = 2;
-            this.colActive.Width = 101;
+            this.colActive.VisibleIndex = 3;
+            this.colActive.Width = 122;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -182,7 +186,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 96);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1509, 117);
+            this.panel1.Size = new System.Drawing.Size(1509, 222);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -192,19 +196,22 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cbActive, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.cbActive, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtUom, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtShortName, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1509, 117);
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.11712F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.11712F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2973F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.04511F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1509, 222);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // label3
@@ -214,7 +221,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 39);
+            this.label3.Size = new System.Drawing.Size(158, 38);
             this.label3.TabIndex = 13;
             this.label3.Text = "Item Status";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -226,9 +233,9 @@
             this.cbActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbActive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbActive.Location = new System.Drawing.Point(167, 81);
+            this.cbActive.Location = new System.Drawing.Point(167, 184);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(1303, 33);
+            this.cbActive.Size = new System.Drawing.Size(1303, 35);
             this.cbActive.TabIndex = 18;
             this.cbActive.UseVisualStyleBackColor = true;
             // 
@@ -246,9 +253,9 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 39);
+            this.label5.Location = new System.Drawing.Point(3, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 39);
+            this.label5.Size = new System.Drawing.Size(158, 38);
             this.label5.TabIndex = 14;
             this.label5.Text = "Short Name:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -258,9 +265,9 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 78);
+            this.label6.Location = new System.Drawing.Point(3, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 39);
+            this.label6.Size = new System.Drawing.Size(158, 41);
             this.label6.TabIndex = 15;
             this.label6.Text = "Active:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -269,7 +276,7 @@
             // 
             this.txtShortName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtShortName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtShortName.Location = new System.Drawing.Point(167, 42);
+            this.txtShortName.Location = new System.Drawing.Point(167, 41);
             this.txtShortName.Name = "txtShortName";
             this.txtShortName.Size = new System.Drawing.Size(1303, 30);
             this.txtShortName.TabIndex = 19;
@@ -279,7 +286,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 944);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1515, 30);
             this.statusStrip1.TabIndex = 2;
@@ -335,11 +342,41 @@
             this.label2.Text = "Search:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 105);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Description:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(167, 79);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1303, 99);
+            this.textBox1.TabIndex = 21;
+            // 
+            // colDescription
+            // 
+            this.colDescription.Caption = "Description";
+            this.colDescription.FieldName = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.Visible = true;
+            this.colDescription.VisibleIndex = 2;
+            this.colDescription.Width = 760;
+            // 
             // FrmSetupStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1515, 757);
+            this.ClientSize = new System.Drawing.Size(1515, 974);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmSetupStatus";
             this.Text = "GIM - Setup - Item Status";
@@ -385,5 +422,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
