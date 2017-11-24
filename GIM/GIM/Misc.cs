@@ -20,6 +20,7 @@ namespace GIM {
         }
 
         public static SqlConnection getConn() {
+            
             return conn;
         }
 

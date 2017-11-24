@@ -22,7 +22,7 @@ namespace GIM {
             throw new NotImplementedException();
         }
 
-        public object update(int id) {
+        public object update(int id, object T) {
             throw new NotImplementedException();
         }
     }

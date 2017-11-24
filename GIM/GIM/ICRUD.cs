@@ -10,6 +10,6 @@ namespace GIM {
         Object find(int id);
         Object[] findAll();
         Object delete(int id);
-        Object update(int id);
+        Object update(int id, object T);
     }
 }
