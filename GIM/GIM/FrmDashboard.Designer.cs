@@ -23,41 +23,175 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiManageItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSeparatorItem2 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
+            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSeparatorItem1 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiSetupItemStatus = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSeparatorItem3 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
+            this.nbiSetupUOM = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.SuspendLayout();
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup1;
+            this.navBarControl1.ActiveGroup = this.navBarGroup2;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup1});
+            this.navBarGroup1,
+            this.navBarGroup5,
+            this.navBarGroup2,
+            this.navBarGroup3,
+            this.navBarGroup4});
+            this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.navBarItem1,
+            this.navBarSeparatorItem1,
+            this.navBarItem2,
+            this.nbiManageItem,
+            this.navBarSeparatorItem2,
+            this.navBarItem4,
+            this.nbiSetupItemStatus,
+            this.navBarSeparatorItem3,
+            this.nbiSetupUOM});
             this.navBarControl1.Location = new System.Drawing.Point(0, 35);
             this.navBarControl1.Name = "navBarControl1";
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 174;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(140, 518);
+            this.navBarControl1.Size = new System.Drawing.Size(174, 577);
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
+            // navBarGroup2
+            // 
+            this.navBarGroup2.Caption = "Items";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiManageItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            this.navBarGroup2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup2.SmallImage")));
+            // 
+            // nbiManageItem
+            // 
+            this.nbiManageItem.Caption = "Manage Item(s)";
+            this.nbiManageItem.Name = "nbiManageItem";
+            this.nbiManageItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiManageItem.SmallImage")));
+            this.nbiManageItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiManageItem_LinkClicked);
+            // 
+            // navBarSeparatorItem2
+            // 
+            this.navBarSeparatorItem2.CanDrag = false;
+            this.navBarSeparatorItem2.Enabled = false;
+            this.navBarSeparatorItem2.Hint = null;
+            this.navBarSeparatorItem2.LargeImageIndex = 0;
+            this.navBarSeparatorItem2.LargeImageSize = new System.Drawing.Size(0, 0);
+            this.navBarSeparatorItem2.Name = "navBarSeparatorItem2";
+            this.navBarSeparatorItem2.SmallImageIndex = 0;
+            this.navBarSeparatorItem2.SmallImageSize = new System.Drawing.Size(0, 0);
+            // 
+            // navBarItem4
+            // 
+            this.navBarItem4.Caption = "Junkyard";
+            this.navBarItem4.Name = "navBarItem4";
+            this.navBarItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
+            // 
             // navBarGroup1
             // 
-            this.navBarGroup1.Caption = "navBarGroup1";
-            this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.Caption = "System Admin";
+            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.navBarGroup1.Name = "navBarGroup1";
+            this.navBarGroup1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.SmallImage")));
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Manage Account(s)";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
+            // 
+            // navBarSeparatorItem1
+            // 
+            this.navBarSeparatorItem1.CanDrag = false;
+            this.navBarSeparatorItem1.Enabled = false;
+            this.navBarSeparatorItem1.Hint = null;
+            this.navBarSeparatorItem1.LargeImageIndex = 0;
+            this.navBarSeparatorItem1.LargeImageSize = new System.Drawing.Size(0, 0);
+            this.navBarSeparatorItem1.Name = "navBarSeparatorItem1";
+            this.navBarSeparatorItem1.SmallImageIndex = 0;
+            this.navBarSeparatorItem1.SmallImageSize = new System.Drawing.Size(0, 0);
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Activity Log";
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.SmallImage")));
+            // 
+            // navBarGroup5
+            // 
+            this.navBarGroup5.Caption = "Me";
+            this.navBarGroup5.Name = "navBarGroup5";
+            this.navBarGroup5.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup5.SmallImage")));
+            // 
+            // navBarGroup3
+            // 
+            this.navBarGroup3.Caption = "Inventory";
+            this.navBarGroup3.Name = "navBarGroup3";
+            this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
+            // 
+            // navBarGroup4
+            // 
+            this.navBarGroup4.Caption = "Setups";
+            this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiSetupItemStatus),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiSetupUOM)});
+            this.navBarGroup4.Name = "navBarGroup4";
+            this.navBarGroup4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.SmallImage")));
+            // 
+            // nbiSetupItemStatus
+            // 
+            this.nbiSetupItemStatus.Caption = "Item Status";
+            this.nbiSetupItemStatus.Name = "nbiSetupItemStatus";
+            this.nbiSetupItemStatus.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiSetupItemStatus.SmallImage")));
+            this.nbiSetupItemStatus.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiSetupItemStatus_LinkClicked);
+            // 
+            // navBarSeparatorItem3
+            // 
+            this.navBarSeparatorItem3.CanDrag = false;
+            this.navBarSeparatorItem3.Enabled = false;
+            this.navBarSeparatorItem3.Hint = null;
+            this.navBarSeparatorItem3.LargeImageIndex = 0;
+            this.navBarSeparatorItem3.LargeImageSize = new System.Drawing.Size(0, 0);
+            this.navBarSeparatorItem3.Name = "navBarSeparatorItem3";
+            this.navBarSeparatorItem3.SmallImageIndex = 0;
+            this.navBarSeparatorItem3.SmallImageSize = new System.Drawing.Size(0, 0);
+            // 
+            // nbiSetupUOM
+            // 
+            this.nbiSetupUOM.Caption = "Unit Of Measure";
+            this.nbiSetupUOM.Name = "nbiSetupUOM";
+            this.nbiSetupUOM.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiSetupUOM.SmallImage")));
+            this.nbiSetupUOM.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiSetupUOM_LinkClicked);
             // 
             // panelControl1
             // 
@@ -66,23 +200,26 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1064, 35);
+            this.panelControl1.Size = new System.Drawing.Size(1164, 35);
             this.panelControl1.TabIndex = 2;
             // 
-            // panelControl2
+            // label1
             // 
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 553);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1064, 14);
-            this.panelControl2.TabIndex = 3;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(871, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Administrator";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(1026, 5);
+            this.pictureEdit1.Location = new System.Drawing.Point(1126, 5);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
@@ -90,35 +227,33 @@
             this.pictureEdit1.Size = new System.Drawing.Size(33, 25);
             this.pictureEdit1.TabIndex = 0;
             // 
-            // label1
+            // panelControl2
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(771, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Administrator";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl2.Location = new System.Drawing.Point(0, 612);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1164, 14);
+            this.panelControl2.TabIndex = 3;
             // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 567);
+            this.ClientSize = new System.Drawing.Size(1164, 626);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl2);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDashboard";
             this.Text = "GIM - Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +266,18 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
+        private DevExpress.XtraNavBar.NavBarItem nbiSetupItemStatus;
+        private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem3;
+        private DevExpress.XtraNavBar.NavBarItem nbiSetupUOM;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
+        private DevExpress.XtraNavBar.NavBarItem nbiManageItem;
+        private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem2;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
     }
 }

@@ -19,10 +19,16 @@ namespace GIM {
         public FrmSetupStatus() {
             InitializeComponent();
             repository = new StatusRepository();
+
+            BtnAdd = controlNavigator1.Buttons.CustomButtons[0];
+            BtnEdit = controlNavigator1.Buttons.CustomButtons[1];
+            BtnSave = controlNavigator1.Buttons.CustomButtons[2];
+            BtnCancel = controlNavigator1.Buttons.CustomButtons[3];
+            BtnSwitch = controlNavigator1.Buttons.CustomButtons[4];
+            BtnRefresh = controlNavigator1.Buttons.CustomButtons[5];
         }      
 
         private void FrmSetupStatus_Load(object sender, EventArgs e) {
-            Misc.setConn("Production");
             loadForm();
         }
 
@@ -39,13 +45,6 @@ namespace GIM {
    
         private void selectionChanged() {
             setControlState(false);
-
-            BtnAdd = controlNavigator1.Buttons.CustomButtons[0];
-            BtnEdit = controlNavigator1.Buttons.CustomButtons[1];
-            BtnSave = controlNavigator1.Buttons.CustomButtons[2];
-            BtnCancel = controlNavigator1.Buttons.CustomButtons[3];
-            BtnSwitch = controlNavigator1.Buttons.CustomButtons[4];
-            BtnRefresh = controlNavigator1.Buttons.CustomButtons[5];
 
             BtnAdd.Enabled = true;
             BtnEdit.Enabled = true;
@@ -78,6 +77,11 @@ namespace GIM {
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            setControlValues();
+            selectionChanged();
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
             setControlValues();
             selectionChanged();
         }

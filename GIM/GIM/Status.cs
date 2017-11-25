@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GIM {
     class Status {
-        public int statusID { get; set; }
+        public int ID { get; set; }
         public string name { get; set; }
         public string shortName { get; set; }
         public string description { get; set; }

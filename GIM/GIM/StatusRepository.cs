@@ -42,7 +42,14 @@ namespace GIM {
         }
 
         public DataTable loadData() {
-            SqlDataAdapter dtAdapter = new SqlDataAdapter("SELECT Name, ShortName, Description, Active FROM Status", Misc.getConn());
+            SqlDataAdapter dtAdapter = new SqlDataAdapter("SELECT Name, ShortName, Description, Active FROM Status ORDER BY Name", Misc.getConn());
+            DataTable dTable = new DataTable("Status");
+            dtAdapter.Fill(dTable);
+            return dTable;
+        }
+
+        public DataTable loadActiveData() {
+            SqlDataAdapter dtAdapter = new SqlDataAdapter("SELECT Name, ShortName, Description, Active FROM Status WHERE Active = 'True' ORDER BY Name", Misc.getConn());
             DataTable dTable = new DataTable("Status");
             dtAdapter.Fill(dTable);
             return dTable;
@@ -54,7 +61,7 @@ namespace GIM {
             Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();
             while(dReader.Read()) {
-                status.statusID = dReader.GetInt32(0);
+                status.ID = dReader.GetInt32(0);
                 status.name = dReader.GetString(1);
                 status.shortName = dReader.GetString(2);
                 status.description = dReader.GetString(3);
@@ -71,7 +78,7 @@ namespace GIM {
             Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();         
             while (dReader.Read()) {
-                status.statusID = dReader.GetInt32(0);
+                status.ID = dReader.GetInt32(0);
                 status.name = dReader.GetString(1);
                 status.shortName = dReader.GetString(2);
                 status.description = dReader.GetString(3);

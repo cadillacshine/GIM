@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace GIM {
     class Item {
-        public int itemID { get; set; }
+        public int ID { get; set; }
         public string name { get; set; }
+        public string shortName { get; set; }
+        public string alias { get; set; }
         public string description { get; set; }
         public double quantity { get; set; }
         public string unitOfMeasure { get; set; }

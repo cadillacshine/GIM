@@ -10,17 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GIM {
-    public partial class FrmSetupUOM: Form {
+    public partial class FrmItem: Form {
+        ItemRepository itemRepository;
+        UOMRepository uomRepository;
+        StatusRepository statusRepository;
 
-        UOMRepository repository;
         NavigatorCustomButton BtnAdd, BtnEdit, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
         private string actionState = "a";
-        private int uomID = 0;
+        private int itemID = 0;
 
-        public FrmSetupUOM() {
+        public FrmItem() {
             InitializeComponent();
 
-            repository = new UOMRepository();
+            itemRepository = new ItemRepository();
+            uomRepository = new UOMRepository();
+            statusRepository = new StatusRepository();
 
             BtnAdd = controlNavigator1.Buttons.CustomButtons[0];
             BtnEdit = controlNavigator1.Buttons.CustomButtons[1];
@@ -30,17 +34,28 @@ namespace GIM {
             BtnRefresh = controlNavigator1.Buttons.CustomButtons[5];
         }
 
-        private void FrmSetupUOM_Load(object sender, EventArgs e) {
+        private void FrmItem_Load(object sender, EventArgs e) {
             loadForm();
         }
 
         private void loadForm() {
-            gridControl1.DataSource = repository.loadData();
+            gridControl1.DataSource = itemRepository.loadData();
+            cmbUOM.DataSource = uomRepository.loadActiveData();
+            cmbUOM.DisplayMember = "Name";
+            cmbStatus.DataSource = statusRepository.loadActiveData();
+            cmbStatus.DisplayMember = "Name";
         }
 
         private void setControlValues() {
-            txtUom.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
+            txtItemName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Name").ToString();
             txtShortName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ShortName").ToString();
+            txtAlias.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Alias").ToString();
+            txtDescription.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Description").ToString();
+            txtQuantity.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Quantity").ToString();
+            cmbUOM.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "UOM").ToString();
+            txtPrice.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Price").ToString();
+            txtExtension.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Extension").ToString();
+            cmbStatus.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Status").ToString();
             cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
         }
 
@@ -56,20 +71,35 @@ namespace GIM {
         }
 
         private void setControlState(bool status) {
-            txtUom.Enabled = status;
+            txtItemName.Enabled = status;
             txtShortName.Enabled = status;
+            txtAlias.Enabled = status;
+            txtDescription.Enabled = status;
+            txtQuantity.Enabled = status;
+            cmbUOM.Enabled = status;
+            txtPrice.Enabled = status;
+            txtExtension.Enabled = status;
+            cmbStatus.Enabled = status;
             cbActive.Enabled = status;
-        }   
+        }
 
         private void emptyControls() {
-            txtUom.Text = "";
+            txtItemName.Text = "";
             txtShortName.Text = "";
+            txtAlias.Text = "";
+            txtDescription.Text = "";
+            txtQuantity.Text = "";
+            cmbUOM.Text = "";
+            txtPrice.Text = "";
+            txtExtension.Text = "";
+            cmbStatus.Text = "";
+            cbActive.Checked = true;
         }
 
         private bool verifyInput() {
-            if (txtUom.Text.Trim().Equals("")) {
+            if (txtItemName.Text.Trim().Equals("")) {
                 MessageBox.Show("Unit Of Measure cannot be empty", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUom.Focus();
+                txtItemName.Focus();
                 return false;
             }
             return true;
@@ -80,11 +110,11 @@ namespace GIM {
             if (e.Button.Tag.ToString() == "Add") {
                 toolStripStatusLabel1.Text = "Adding...";
                 if (tableLayoutPanel1.RowStyles[2].Height == 1)
-                    tableLayoutPanel1.RowStyles[2].Height = 80;
+                    tableLayoutPanel1.RowStyles[2].Height = 295;
                 actionState = "a";
                 setControlState(true);
                 emptyControls();
-                txtUom.Focus();
+                txtItemName.Focus();
 
                 BtnAdd.Enabled = false;
                 BtnEdit.Enabled = false;
@@ -103,14 +133,14 @@ namespace GIM {
 
             } else if (e.Button.Tag.ToString() == "Edit") {
 
-                uomID = repository.getID(txtUom.Text);
+                itemID = itemRepository.getID(txtItemName.Text);
 
                 if (tableLayoutPanel1.RowStyles[2].Height == 1)
-                    tableLayoutPanel1.RowStyles[2].Height = 80;
+                    tableLayoutPanel1.RowStyles[2].Height = 295;
                 actionState = "e";
                 setControlState(true);
 
-                txtUom.Focus();
+                txtItemName.Focus();
                 BtnAdd.Enabled = false;
                 BtnEdit.Enabled = false;
                 BtnSave.Enabled = true;
@@ -130,31 +160,45 @@ namespace GIM {
                 if (actionState == "e") {
                     toolStripStatusLabel1.Text = "Editing...";
 
-                    UnitOfMeasure uom = new UnitOfMeasure {
-                        name = txtUom.Text,
+                    Item item = new Item {
+                        name = txtItemName.Text,
                         shortName = txtShortName.Text,
+                        alias = txtAlias.Text,
+                        description = txtDescription.Text,
+                        quantity = Convert.ToDouble(txtQuantity.Text),
+                        unitOfMeasure = cmbUOM.Text,
+                        price = Convert.ToDouble(txtPrice.Text),
+                        extension = Convert.ToDouble(txtExtension.Text),
+                        status = cmbStatus.Text,
                         active = cbActive.Checked
                     };
 
-                    repository.update(uomID, uom);
+                    itemRepository.update(itemID, item);
                 } else if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
 
                     if (!verifyInput())
                         return;
 
-                    UnitOfMeasure uom = new UnitOfMeasure {
-                        name = txtUom.Text,
+                    Item item = new Item {
+                        name = txtItemName.Text,
                         shortName = txtShortName.Text,
+                        alias = txtAlias.Text,
+                        description = txtDescription.Text,
+                        quantity = Convert.ToDouble(txtQuantity.Text),
+                        unitOfMeasure = cmbUOM.Text,
+                        price = Convert.ToDouble(txtPrice.Text),
+                        extension = Convert.ToDouble(txtExtension.Text),
+                        status = cmbStatus.Text,
                         active = cbActive.Checked
                     };
 
-                    repository.add(uom);
+                    itemRepository.add(item);
                 }
 
                 actionState = "a";
 
-                gridControl1.DataSource = repository.loadData();
+                gridControl1.DataSource = itemRepository.loadData();
                 setControlState(false);
                 BtnSave.Enabled = false;
                 BtnEdit.Enabled = true;
@@ -194,14 +238,14 @@ namespace GIM {
 
             } else if (e.Button.Tag.ToString() == "Refresh") {
                 toolStripStatusLabel1.Text = "Refreshing...";
-                gridControl1.DataSource = repository.loadData();
+                gridControl1.DataSource = itemRepository.loadData();
                 toolStripStatusLabel1.Text = "Done";
 
             } else if (e.Button.Tag.ToString() == "Switch") {
-                if (tableLayoutPanel1.RowStyles[2].Height == 80) {
+                if (tableLayoutPanel1.RowStyles[2].Height == 295) {
                     tableLayoutPanel1.RowStyles[2].Height = 1;
                 } else {
-                    tableLayoutPanel1.RowStyles[2].Height = 80;
+                    tableLayoutPanel1.RowStyles[2].Height = 295;
                 }
             }
             //} catch {
@@ -217,10 +261,6 @@ namespace GIM {
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
             setControlValues();
             selectionChanged();
-        }
-
-        private void txtUom_TextChanged(object sender, EventArgs e) {
-            txtShortName.Text = txtUom.Text;
         }
     }
 }
