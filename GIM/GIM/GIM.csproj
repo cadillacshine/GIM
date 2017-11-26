@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddItemQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddItemQuantity.Designer.cs">
+      <DependentUpon>FrmAddItemQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="StatusRepository.cs" />
     <Compile Include="UnitOfMeasure.cs" />
     <Compile Include="UOMRepository.cs" />
+    <EmbeddedResource Include="FrmAddItemQuantity.resx">
+      <DependentUpon>FrmAddItemQuantity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>

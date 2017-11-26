@@ -13,6 +13,7 @@ namespace GIM {
         private FrmSetupStatus fSetupStatus;
         private FrmSetupUOM fSetupUOM;
         private FrmItem fItem;
+        private FrmAddItemQuantity fAddItemQuantity;
 
         public FrmDashboard() {
             InitializeComponent();
@@ -72,6 +73,24 @@ namespace GIM {
             }
         }
 
+        private void launchAddItemQuantity() {
+            if (fAddItemQuantity != null) {
+                if (!fAddItemQuantity.IsDisposed) {
+                    fAddItemQuantity.MdiParent = this;
+                    fAddItemQuantity.WindowState = FormWindowState.Normal;
+                    fAddItemQuantity.BringToFront();
+                } else {
+                    fAddItemQuantity = new FrmAddItemQuantity();
+                    fAddItemQuantity.MdiParent = this;
+                    fAddItemQuantity.Show();
+                }
+            } else {
+                fAddItemQuantity = new FrmAddItemQuantity();
+                fAddItemQuantity.MdiParent = this;
+                fAddItemQuantity.Show();
+            }
+        }
+
         private void FrmDashboard_Load(object sender, EventArgs e) {
 
         }
@@ -86,6 +105,10 @@ namespace GIM {
 
         private void nbiManageItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
             launchItem();
+        }
+
+        private void nbiAddItemQuantity_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            launchAddItemQuantity();
         }
     }
 }
