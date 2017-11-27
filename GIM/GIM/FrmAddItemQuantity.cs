@@ -91,7 +91,7 @@ namespace GIM {
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             // try {
             if (e.Button.Tag.ToString() == "Add") {
-                toolStripStatusLabel1.Text = "Adding Quantity...";
+                toolStripStatusLabel1.Text = "Adding item quantity...";
 
                 itemID = itemRepository.getID(txtItemName.Text);
 
