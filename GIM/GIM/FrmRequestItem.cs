@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GIM {
-    public partial class FrmAddItemQuantity: Form {
+    public partial class FrmRequestItem: Form {
         ItemRepository itemRepository;
 
         NavigatorCustomButton BtnAdd, BtnSave, BtnCancel, BtnSwitch, BtnRefresh;
         private string actionState = "a";
         private int itemID = 0;
 
-        public FrmAddItemQuantity() {
+        public FrmRequestItem() {
             InitializeComponent();
 
             itemRepository = new ItemRepository();
@@ -29,7 +29,7 @@ namespace GIM {
             BtnRefresh = controlNavigator1.Buttons.CustomButtons[5];
         }
 
-        private void FrmAddItemQuantity_Load(object sender, EventArgs e) {
+        private void FrmRequestItem_Load(object sender, EventArgs e) {
             loadForm();
         }
 
@@ -53,13 +53,13 @@ namespace GIM {
             BtnSwitch.Enabled = true;
             BtnRefresh.Enabled = true;
 
-            txtAddQuantity.Text = "0";
-            txtAddQuantity.SelectAll();
-            txtAddQuantity.Focus();
+            txtRequestQuantity.Text = "0";
+            txtRequestQuantity.SelectAll();
+            txtRequestQuantity.Focus();
         }
 
         private void setControlState(bool status) {
-            txtAddQuantity.Enabled = status;
+            txtRequestQuantity.Enabled = status;
         }
 
         private void emptyControls() {
@@ -70,9 +70,15 @@ namespace GIM {
         }
 
         private bool verifyInput() {
-            if (txtAddQuantity.Text.Trim().Equals("")) {
+            if (txtRequestQuantity.Text.Trim().Equals("")) {
                 MessageBox.Show("Quantity cannot be empty!", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtAddQuantity.Focus();
+                txtRequestQuantity.Focus();
+                return false;
+            }
+
+            if (Convert.ToDouble(txtRequestQuantity.Text) > Convert.ToDouble(txtQuantity.Text)) {
+                MessageBox.Show("Quantity requested cannot be more than quantity in stock!", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRequestQuantity.Focus();
                 return false;
             }
             return true;
@@ -90,8 +96,8 @@ namespace GIM {
 
         private void controlNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e) {
             // try {
-            if (e.Button.Tag.ToString() == "Add") {
-                toolStripStatusLabel1.Text = "Adding item quantity...";
+            if (e.Button.Tag.ToString() == "Request") {
+                toolStripStatusLabel1.Text = "Requesting for item...";
 
                 itemID = itemRepository.getID(txtItemName.Text);
 
@@ -115,7 +121,7 @@ namespace GIM {
                 searchControl1.Enabled = false;
                 gridControl1.Enabled = false;
 
-            }  else if (e.Button.Tag.ToString() == "Save") {
+            } else if (e.Button.Tag.ToString() == "Save") {
 
                 if (actionState == "a") {
                     toolStripStatusLabel1.Text = "Saving...";
@@ -128,7 +134,7 @@ namespace GIM {
                         shortName = txtShortName.Text,
                         alias = txtAlias.Text,
                         description = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Description").ToString(),
-                        quantity = Convert.ToDouble(txtQuantity.Text) + Convert.ToDouble(txtAddQuantity.Text),
+                        quantity = Convert.ToDouble(txtQuantity.Text) - Convert.ToDouble(txtRequestQuantity.Text),
                         unitOfMeasure = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "UOM").ToString(),
                         price = (double)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Price"),
                         extension = (double)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Extension"),
@@ -137,7 +143,7 @@ namespace GIM {
                     };
 
                     itemRepository.update(itemID, item);
-                } 
+                }
 
                 gridControl1.DataSource = itemRepository.loadData();
                 setControlState(false);

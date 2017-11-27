@@ -1,5 +1,5 @@
 ﻿namespace GIM {
-    partial class FrmAddItemQuantity {
+    partial class FrmRequestItem {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -50,7 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtAddQuantity = new System.Windows.Forms.TextBox();
+            this.txtRequestQuantity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -89,8 +89,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1048, 543);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1016, 590);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
             // controlNavigator1
             // 
@@ -103,7 +103,7 @@
             this.controlNavigator1.Buttons.Remove.Visible = false;
             this.controlNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.controlNavigator1.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(0, 6, true, true, "Add", "Add"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(0, 7, true, true, "", "Request"),
             new DevExpress.XtraEditors.NavigatorCustomButton(1, 8, true, false, "Edit", "Edit"),
             new DevExpress.XtraEditors.NavigatorCustomButton(2, 9, true, true, "Save", "Save"),
             new DevExpress.XtraEditors.NavigatorCustomButton(3, 10, true, true, "Cancel", "Cancel"),
@@ -114,7 +114,7 @@
             this.controlNavigator1.Margin = new System.Windows.Forms.Padding(2);
             this.controlNavigator1.Name = "controlNavigator1";
             this.controlNavigator1.NavigatableControl = this.gridControl1;
-            this.controlNavigator1.Size = new System.Drawing.Size(1044, 28);
+            this.controlNavigator1.Size = new System.Drawing.Size(1012, 28);
             this.controlNavigator1.TabIndex = 10;
             this.controlNavigator1.Text = "controlNavigator1";
             this.controlNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
@@ -132,7 +132,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1044, 336);
+            this.gridControl1.Size = new System.Drawing.Size(1012, 383);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -273,7 +273,7 @@
             this.panel1.Location = new System.Drawing.Point(2, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1044, 116);
+            this.panel1.Size = new System.Drawing.Size(1012, 116);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -305,7 +305,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1044, 116);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1012, 116);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // label3
@@ -329,7 +329,7 @@
             this.txtItemName.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.ReadOnly = true;
-            this.txtItemName.Size = new System.Drawing.Size(893, 23);
+            this.txtItemName.Size = new System.Drawing.Size(861, 23);
             this.txtItemName.TabIndex = 17;
             // 
             // label5
@@ -353,7 +353,7 @@
             this.txtShortName.Margin = new System.Windows.Forms.Padding(2);
             this.txtShortName.Name = "txtShortName";
             this.txtShortName.ReadOnly = true;
-            this.txtShortName.Size = new System.Drawing.Size(893, 23);
+            this.txtShortName.Size = new System.Drawing.Size(861, 23);
             this.txtShortName.TabIndex = 18;
             // 
             // txtAlias
@@ -364,7 +364,7 @@
             this.txtAlias.Margin = new System.Windows.Forms.Padding(2);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.ReadOnly = true;
-            this.txtAlias.Size = new System.Drawing.Size(893, 23);
+            this.txtAlias.Size = new System.Drawing.Size(861, 23);
             this.txtAlias.TabIndex = 19;
             // 
             // label7
@@ -400,14 +400,14 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.060606F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.69921F));
             this.tableLayoutPanel4.Controls.Add(this.txtQuantity, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtAddQuantity, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtRequestQuantity, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(126, 86);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(891, 27);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(859, 27);
             this.tableLayoutPanel4.TabIndex = 32;
             // 
             // txtQuantity
@@ -418,31 +418,31 @@
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.ReadOnly = true;
-            this.txtQuantity.Size = new System.Drawing.Size(408, 23);
+            this.txtQuantity.Size = new System.Drawing.Size(393, 23);
             this.txtQuantity.TabIndex = 21;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtAddQuantity
+            // txtRequestQuantity
             // 
-            this.txtAddQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddQuantity.Location = new System.Drawing.Point(467, 2);
-            this.txtAddQuantity.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddQuantity.Name = "txtAddQuantity";
-            this.txtAddQuantity.Size = new System.Drawing.Size(422, 23);
-            this.txtAddQuantity.TabIndex = 22;
-            this.txtAddQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRequestQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRequestQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRequestQuantity.Location = new System.Drawing.Point(451, 2);
+            this.txtRequestQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRequestQuantity.Name = "txtRequestQuantity";
+            this.txtRequestQuantity.Size = new System.Drawing.Size(406, 23);
+            this.txtRequestQuantity.TabIndex = 22;
+            this.txtRequestQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(415, 0);
+            this.label1.Location = new System.Drawing.Point(400, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 27);
+            this.label1.Size = new System.Drawing.Size(46, 27);
             this.label1.TabIndex = 23;
-            this.label1.Text = "+";
+            this.label1.Text = "-";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // statusStrip1
@@ -450,10 +450,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 568);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1048, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1016, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -478,7 +478,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1044, 24);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1012, 24);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // searchControl1
@@ -494,7 +494,7 @@
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
             this.searchControl1.Properties.Client = this.gridControl1;
-            this.searchControl1.Size = new System.Drawing.Size(864, 24);
+            this.searchControl1.Size = new System.Drawing.Size(832, 24);
             this.searchControl1.TabIndex = 15;
             // 
             // label2
@@ -510,15 +510,15 @@
             this.label2.Text = "Search:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FrmAddItemQuantity
+            // FrmRequestItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 543);
+            this.ClientSize = new System.Drawing.Size(1016, 590);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmAddItemQuantity";
-            this.Text = "GIM - Add Item Quantity";
-            this.Load += new System.EventHandler(this.FrmAddItemQuantity_Load);
+            this.Name = "FrmRequestItem";
+            this.Text = "GIM - Request for Item(s)";
+            this.Load += new System.EventHandler(this.FrmRequestItem_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -564,16 +564,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtShortName;
         private System.Windows.Forms.TextBox txtAlias;
-        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtRequestQuantity;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox txtAddQuantity;
-        private System.Windows.Forms.Label label1;
     }
 }

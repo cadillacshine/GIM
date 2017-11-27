@@ -98,7 +98,7 @@ namespace GIM {
 
         private bool verifyInput() {
             if (txtItemName.Text.Trim().Equals("")) {
-                MessageBox.Show("Item name cannot be empty", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Item name cannot be empty!", "Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtItemName.Focus();
                 return false;
             }

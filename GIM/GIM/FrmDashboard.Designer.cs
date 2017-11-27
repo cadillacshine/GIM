@@ -49,11 +49,11 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -151,6 +151,7 @@
             this.nbiRequestItem.Caption = "Request Item(s)";
             this.nbiRequestItem.Name = "nbiRequestItem";
             this.nbiRequestItem.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiRequestItem.SmallImage")));
+            this.nbiRequestItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiRequestItem_LinkClicked);
             // 
             // navBarSeparatorItem5
             // 
@@ -296,6 +297,15 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.MaxItemId = 0;
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -327,15 +337,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1164, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 626);
-            // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.MaxItemId = 0;
             // 
             // FrmDashboard
             // 
