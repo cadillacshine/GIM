@@ -33,7 +33,7 @@
             this.navBarSeparatorItem4 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
             this.nbiRequestItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSeparatorItem5 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiJunkyard = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSeparatorItem1 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
@@ -79,7 +79,7 @@
             this.navBarItem2,
             this.nbiManageItem,
             this.navBarSeparatorItem2,
-            this.navBarItem4,
+            this.nbiJunkyard,
             this.nbiSetupItemStatus,
             this.navBarSeparatorItem3,
             this.nbiSetupUOM,
@@ -106,7 +106,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem4),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiRequestItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem5),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiJunkyard)});
             this.navBarGroup2.Name = "navBarGroup2";
             this.navBarGroup2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup2.SmallImage")));
             // 
@@ -164,11 +164,11 @@
             this.navBarSeparatorItem5.SmallImageIndex = 0;
             this.navBarSeparatorItem5.SmallImageSize = new System.Drawing.Size(0, 0);
             // 
-            // navBarItem4
+            // nbiJunkyard
             // 
-            this.navBarItem4.Caption = "Junkyard";
-            this.navBarItem4.Name = "navBarItem4";
-            this.navBarItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
+            this.nbiJunkyard.Caption = "Junkyard";
+            this.nbiJunkyard.Name = "nbiJunkyard";
+            this.nbiJunkyard.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiJunkyard.SmallImage")));
             // 
             // navBarGroup1
             // 
@@ -386,7 +386,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem nbiManageItem;
         private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem2;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarItem nbiJunkyard;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
         private DevExpress.XtraNavBar.NavBarItem nbiAddItemQuantity;
