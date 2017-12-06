@@ -32,6 +32,14 @@ namespace GIM {
             BtnCancel = controlNavigator1.Buttons.CustomButtons[3];
             BtnSwitch = controlNavigator1.Buttons.CustomButtons[4];
             BtnRefresh = controlNavigator1.Buttons.CustomButtons[5];
+
+            controlNavigator1.Buttons.ImageList = sharedImageCollection1;
+            controlNavigator1.Buttons.CustomButtons[0].ImageIndex = 0;
+            controlNavigator1.Buttons.CustomButtons[1].ImageIndex = 1;
+            controlNavigator1.Buttons.CustomButtons[2].ImageIndex = 2;
+            controlNavigator1.Buttons.CustomButtons[3].ImageIndex = 3;
+            controlNavigator1.Buttons.CustomButtons[4].ImageIndex = 4;
+            controlNavigator1.Buttons.CustomButtons[5].ImageIndex = 5;
         }
 
         private void FrmItem_Load(object sender, EventArgs e) {

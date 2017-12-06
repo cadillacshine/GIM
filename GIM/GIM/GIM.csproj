@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v16.2, Version=16.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -72,6 +73,12 @@
     </Compile>
     <Compile Include="FrmItem.Designer.cs">
       <DependentUpon>FrmItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJunkyard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJunkyard.Designer.cs">
+      <DependentUpon>FrmJunkyard.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItem.resx">
       <DependentUpon>FrmItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJunkyard.resx">
+      <DependentUpon>FrmJunkyard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
