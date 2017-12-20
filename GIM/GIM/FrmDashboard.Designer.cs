@@ -54,6 +54,11 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSeparatorItem6 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
+            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSeparatorItem7 = new DevExpress.XtraNavBar.NavBarSeparatorItem();
+            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -65,7 +70,7 @@
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup2;
+            this.navBarControl1.ActiveGroup = this.navBarGroup3;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
@@ -86,7 +91,12 @@
             this.nbiAddItemQuantity,
             this.navBarSeparatorItem4,
             this.navBarSeparatorItem5,
-            this.nbiRequestItem});
+            this.nbiRequestItem,
+            this.navBarItem3,
+            this.navBarSeparatorItem6,
+            this.navBarItem4,
+            this.navBarSeparatorItem7,
+            this.navBarItem5});
             this.navBarControl1.Location = new System.Drawing.Point(0, 35);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 174;
@@ -98,7 +108,6 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Items";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiManageItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem2),
@@ -212,6 +221,13 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Inventory";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem6),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSeparatorItem7),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
             this.navBarGroup3.Name = "navBarGroup3";
             this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
             // 
@@ -338,6 +354,46 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 626);
             // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "All Items";
+            this.navBarItem3.Name = "navBarItem3";
+            this.navBarItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.SmallImage")));
+            // 
+            // navBarSeparatorItem6
+            // 
+            this.navBarSeparatorItem6.CanDrag = false;
+            this.navBarSeparatorItem6.Enabled = false;
+            this.navBarSeparatorItem6.Hint = null;
+            this.navBarSeparatorItem6.LargeImageIndex = 0;
+            this.navBarSeparatorItem6.LargeImageSize = new System.Drawing.Size(0, 0);
+            this.navBarSeparatorItem6.Name = "navBarSeparatorItem6";
+            this.navBarSeparatorItem6.SmallImageIndex = 0;
+            this.navBarSeparatorItem6.SmallImageSize = new System.Drawing.Size(0, 0);
+            // 
+            // navBarItem4
+            // 
+            this.navBarItem4.Caption = "Low Stock";
+            this.navBarItem4.Name = "navBarItem4";
+            this.navBarItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem4.SmallImage")));
+            // 
+            // navBarSeparatorItem7
+            // 
+            this.navBarSeparatorItem7.CanDrag = false;
+            this.navBarSeparatorItem7.Enabled = false;
+            this.navBarSeparatorItem7.Hint = null;
+            this.navBarSeparatorItem7.LargeImageIndex = 0;
+            this.navBarSeparatorItem7.LargeImageSize = new System.Drawing.Size(0, 0);
+            this.navBarSeparatorItem7.Name = "navBarSeparatorItem7";
+            this.navBarSeparatorItem7.SmallImageIndex = 0;
+            this.navBarSeparatorItem7.SmallImageSize = new System.Drawing.Size(0, 0);
+            // 
+            // navBarItem5
+            // 
+            this.navBarItem5.Caption = "Junk";
+            this.navBarItem5.Name = "navBarItem5";
+            this.navBarItem5.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.SmallImage")));
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,5 +455,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem6;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarSeparatorItem navBarSeparatorItem7;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
     }
 }

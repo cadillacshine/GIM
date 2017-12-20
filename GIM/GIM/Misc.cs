@@ -14,9 +14,9 @@ namespace GIM {
 
         public static void setConn(string connection) {
             if (connection == "Production")
-                conn = new SqlConnection(@"data source=FIVE\FIVE14;initial catalog=dbGIMS;integrated security=True");
+                conn = new SqlConnection(@"data source=GTM-S0-MIS-KB-M\FIVE14;initial catalog=dbGIMS;integrated security=True");
             else
-                conn = new SqlConnection(@"data source=FIVE\FIVE14;initial catalog=dbGIMS;integrated security=True");
+                conn = new SqlConnection(@"data source=GTM-S0-MIS-KB-M\FIVE14;initial catalog=dbGIMS;integrated security=True");
         }
 
         public static SqlConnection getConn() {

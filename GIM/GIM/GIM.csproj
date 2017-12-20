@@ -74,12 +74,6 @@
     <Compile Include="FrmItem.Designer.cs">
       <DependentUpon>FrmItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmJunkyard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmJunkyard.Designer.cs">
-      <DependentUpon>FrmJunkyard.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,9 +117,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmItem.resx">
       <DependentUpon>FrmItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmJunkyard.resx">
-      <DependentUpon>FrmJunkyard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

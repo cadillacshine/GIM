@@ -527,6 +527,8 @@
             this.sharedImageCollection1.ImageSource.Images.SetKeyName(3, "cancel_16x16.png");
             this.sharedImageCollection1.ImageSource.Images.SetKeyName(4, "insertpagebreak_16x16.png");
             this.sharedImageCollection1.ImageSource.Images.SetKeyName(5, "refresh_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(6, "remove_16x16.png");
+            this.sharedImageCollection1.ImageSource.Images.SetKeyName(7, "trash_16x16.png");
             this.sharedImageCollection1.ParentControl = this;
             // 
             // FrmAddItemQuantity
