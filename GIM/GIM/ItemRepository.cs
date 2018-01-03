@@ -18,15 +18,13 @@ namespace GIM {
             int uomID = uomRepository.getID(item.unitOfMeasure);
             int statusID = statusRepository.getID(item.status);
 
-            sqlcmd = new SqlCommand("INSERT INTO Item (Name, ShortName, Alias, Description, Quantity, UOMID, Price, Extension, StatusID, Active) VALUES (@Name, @ShortName, @Alias, @Description, @Quantity, @UOMID, @Price, @Extension, @StatusID, @Active)", Misc.getConn());
+            sqlcmd = new SqlCommand("INSERT INTO Item (Name, ShortName, Alias, Description, Quantity, UOMID, Price, Extension, StatusID, Active) VALUES (@Name, @ShortName, @Alias, @Description, @Quantity, @UOMID, @StatusID, @Active)", Misc.getConn());
             sqlcmd.Parameters.AddWithValue("@Name", item.name);
             sqlcmd.Parameters.AddWithValue("@ShortName", item.shortName);
             sqlcmd.Parameters.AddWithValue("@Alias", item.alias);
             sqlcmd.Parameters.AddWithValue("@Description", item.description);
             sqlcmd.Parameters.AddWithValue("@Quantity", item.quantity);
             sqlcmd.Parameters.AddWithValue("@UOMID", uomID);
-            sqlcmd.Parameters.AddWithValue("@Price", item.price);
-            sqlcmd.Parameters.AddWithValue("@Extension", item.extension);
             sqlcmd.Parameters.AddWithValue("@StatusID", statusID);
             sqlcmd.Parameters.AddWithValue("@Active", item.active);
             Misc.connOpen();
@@ -44,7 +42,7 @@ namespace GIM {
 
         public object find(int id) {
             Item item = new Item();
-            sqlcmd = new SqlCommand("SELECT ItemID, Name, ShortName, Alias, Description, Quantity, UOM, Price, Extension, Status, Active FROM vwItem WHERE ItemID = '" + id + "' ", Misc.getConn());
+            sqlcmd = new SqlCommand("SELECT ItemID, Name, ShortName, Alias, Description, Quantity, UOM, Status, Active FROM vwItem WHERE ItemID = '" + id + "' ", Misc.getConn());
             Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();
             while (dReader.Read()) {
@@ -55,10 +53,8 @@ namespace GIM {
                 item.description = dReader.GetString(4);
                 item.quantity = dReader.GetDouble(5);
                 item.unitOfMeasure = dReader.GetString(6);
-                item.price = dReader.GetDouble(7);
-                item.extension = dReader.GetDouble(8);
-                item.status = dReader.GetString(9);
-                item.active = dReader.GetBoolean(10);
+                item.status = dReader.GetString(7);
+                item.active = dReader.GetBoolean(8);
             }
             dReader.Close();
             return item;
@@ -67,7 +63,7 @@ namespace GIM {
         public object[] findAll() {
             Item item = new Item();
             List<Item> items = new List<Item>();
-            sqlcmd = new SqlCommand("SELECT ItemID, Name, ShortName, Alias, Description, Quantity, UOM, Price, Extension, Status, Active FROM vwItem", Misc.getConn());
+            sqlcmd = new SqlCommand("SELECT ItemID, Name, ShortName, Alias, Description, Quantity, UOM, Status, Active FROM vwItem", Misc.getConn());
             Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();
             while (dReader.Read()) {
@@ -78,10 +74,8 @@ namespace GIM {
                 item.description = dReader.GetString(4);
                 item.quantity = dReader.GetDouble(5);
                 item.unitOfMeasure = dReader.GetString(6);
-                item.price = dReader.GetDouble(7);
-                item.extension = dReader.GetDouble(8);
-                item.status = dReader.GetString(9);
-                item.active = dReader.GetBoolean(10);
+                item.status = dReader.GetString(7);
+                item.active = dReader.GetBoolean(8);
                 items.Add(item);
             }
             dReader.Close();
@@ -95,7 +89,7 @@ namespace GIM {
         }
 
         public DataTable loadData() {
-            SqlDataAdapter dtAdapter = new SqlDataAdapter("SELECT ItemID, Name, ShortName, Alias, Description, Quantity, UOM, Price, Extension, Status, Active FROM vwItem ORDER BY Name", Misc.getConn());
+            SqlDataAdapter dtAdapter = new SqlDataAdapter("SELECT ItemID, Name, ShortName, Alias, Description, Quantity, UOM, Status, Active FROM vwItem ORDER BY Name", Misc.getConn());
             DataTable dTable = new DataTable("vwItem");
             dtAdapter.Fill(dTable);
             return dTable;
@@ -107,15 +101,13 @@ namespace GIM {
             int uomID = uomRepository.getID(item.unitOfMeasure);
             int statusID = statusRepository.getID(item.status);
 
-            sqlcmd = new SqlCommand("UPDATE Item SET Name = @Name, ShortName = @ShortName, Alias= @Alias, Description = @Description, Quantity = @Quantity, UOMID = @UOMID, Price = @Price, Extension = @Extension, StatusID = @StatusID, Active = @Active WHERE ItemID = '" + id + "' ", Misc.getConn());
+            sqlcmd = new SqlCommand("UPDATE Item SET Name = @Name, ShortName = @ShortName, Alias= @Alias, Description = @Description, Quantity = @Quantity, UOMID = @UOMID, StatusID = @StatusID, Active = @Active WHERE ItemID = '" + id + "' ", Misc.getConn());
             sqlcmd.Parameters.AddWithValue("@Name", item.name);
             sqlcmd.Parameters.AddWithValue("@ShortName", item.shortName);
             sqlcmd.Parameters.AddWithValue("@Alias", item.alias);
             sqlcmd.Parameters.AddWithValue("@Description", item.description);
             sqlcmd.Parameters.AddWithValue("@Quantity", item.quantity);
             sqlcmd.Parameters.AddWithValue("@UOMID", uomID);
-            sqlcmd.Parameters.AddWithValue("@Price", item.price);
-            sqlcmd.Parameters.AddWithValue("@Extension", item.extension);
             sqlcmd.Parameters.AddWithValue("@StatusID", statusID);
             sqlcmd.Parameters.AddWithValue("@Active", item.active);
             Misc.connOpen();

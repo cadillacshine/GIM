@@ -35,8 +35,6 @@
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUOM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colExtension = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -52,23 +50,21 @@
             this.txtAlias = new System.Windows.Forms.TextBox();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtExtension = new System.Windows.Forms.TextBox();
-            this.cmbUOM = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.label2 = new System.Windows.Forms.Label();
             this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbUOM = new System.Windows.Forms.ComboBox();
+            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExtension = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -99,7 +95,7 @@
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 295F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 276F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1126, 608);
@@ -138,14 +134,14 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gridControl1.Location = new System.Drawing.Point(2, 357);
+            this.gridControl1.Location = new System.Drawing.Point(2, 338);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1122, 226);
+            this.gridControl1.Size = new System.Drawing.Size(1122, 245);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -165,8 +161,6 @@
             this.colDescription,
             this.colQuantity,
             this.colUOM,
-            this.colPrice,
-            this.colExtension,
             this.colStatus,
             this.colActive});
             this.gridView1.GridControl = this.gridControl1;
@@ -220,7 +214,7 @@
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 8;
+            this.colQuantity.VisibleIndex = 6;
             this.colQuantity.Width = 92;
             // 
             // colUOM
@@ -232,31 +226,13 @@
             this.colUOM.VisibleIndex = 4;
             this.colUOM.Width = 61;
             // 
-            // colPrice
-            // 
-            this.colPrice.Caption = "Price";
-            this.colPrice.FieldName = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 5;
-            this.colPrice.Width = 61;
-            // 
-            // colExtension
-            // 
-            this.colExtension.Caption = "Extension";
-            this.colExtension.FieldName = "Extension";
-            this.colExtension.Name = "colExtension";
-            this.colExtension.Visible = true;
-            this.colExtension.VisibleIndex = 6;
-            this.colExtension.Width = 85;
-            // 
             // colStatus
             // 
             this.colStatus.Caption = "Status";
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 7;
+            this.colStatus.VisibleIndex = 5;
             this.colStatus.Width = 93;
             // 
             // colActive
@@ -266,7 +242,7 @@
             this.colActive.FieldName = "Active";
             this.colActive.Name = "colActive";
             this.colActive.Visible = true;
-            this.colActive.VisibleIndex = 9;
+            this.colActive.VisibleIndex = 7;
             this.colActive.Width = 58;
             // 
             // repositoryItemCheckEdit2
@@ -286,7 +262,7 @@
             this.panel1.Location = new System.Drawing.Point(2, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1122, 291);
+            this.panel1.Size = new System.Drawing.Size(1122, 272);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -294,7 +270,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtItemName, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
@@ -302,35 +278,31 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtDescription, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.txtAlias, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.cbActive, 1, 9);
+            this.tableLayoutPanel3.Controls.Add(this.cbActive, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.txtQuantity, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.txtPrice, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.txtExtension, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.cmbUOM, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.cmbStatus, 1, 8);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 9);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.cmbStatus, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label8, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.label9, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.label10, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 7);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 10;
+            this.tableLayoutPanel3.RowCount = 8;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1122, 291);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1122, 272);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // label3
@@ -353,7 +325,7 @@
             this.txtItemName.Location = new System.Drawing.Point(125, 2);
             this.txtItemName.Margin = new System.Windows.Forms.Padding(2);
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(971, 23);
+            this.txtItemName.Size = new System.Drawing.Size(982, 23);
             this.txtItemName.TabIndex = 17;
             this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
             // 
@@ -377,7 +349,7 @@
             this.txtShortName.Location = new System.Drawing.Point(125, 29);
             this.txtShortName.Margin = new System.Windows.Forms.Padding(2);
             this.txtShortName.Name = "txtShortName";
-            this.txtShortName.Size = new System.Drawing.Size(971, 23);
+            this.txtShortName.Size = new System.Drawing.Size(982, 23);
             this.txtShortName.TabIndex = 18;
             // 
             // label1
@@ -388,7 +360,7 @@
             this.label1.Location = new System.Drawing.Point(2, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 48);
+            this.label1.Size = new System.Drawing.Size(119, 80);
             this.label1.TabIndex = 20;
             this.label1.Text = "Description:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -401,7 +373,7 @@
             this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(971, 44);
+            this.txtDescription.Size = new System.Drawing.Size(982, 76);
             this.txtDescription.TabIndex = 20;
             // 
             // txtAlias
@@ -411,7 +383,7 @@
             this.txtAlias.Location = new System.Drawing.Point(125, 57);
             this.txtAlias.Margin = new System.Windows.Forms.Padding(2);
             this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(971, 23);
+            this.txtAlias.Size = new System.Drawing.Size(982, 23);
             this.txtAlias.TabIndex = 19;
             // 
             // cbActive
@@ -421,10 +393,10 @@
             this.cbActive.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbActive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbActive.Location = new System.Drawing.Point(125, 273);
+            this.cbActive.Location = new System.Drawing.Point(125, 251);
             this.cbActive.Margin = new System.Windows.Forms.Padding(2);
             this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(971, 16);
+            this.cbActive.Size = new System.Drawing.Size(982, 19);
             this.cbActive.TabIndex = 26;
             this.cbActive.UseVisualStyleBackColor = true;
             // 
@@ -432,43 +404,11 @@
             // 
             this.txtQuantity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(125, 133);
+            this.txtQuantity.Location = new System.Drawing.Point(125, 165);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(971, 23);
+            this.txtQuantity.Size = new System.Drawing.Size(982, 23);
             this.txtQuantity.TabIndex = 21;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(125, 190);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(971, 23);
-            this.txtPrice.TabIndex = 23;
-            // 
-            // txtExtension
-            // 
-            this.txtExtension.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtExtension.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExtension.Location = new System.Drawing.Point(125, 218);
-            this.txtExtension.Margin = new System.Windows.Forms.Padding(2);
-            this.txtExtension.Name = "txtExtension";
-            this.txtExtension.Size = new System.Drawing.Size(971, 23);
-            this.txtExtension.TabIndex = 24;
-            // 
-            // cmbUOM
-            // 
-            this.cmbUOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbUOM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUOM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbUOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUOM.FormattingEnabled = true;
-            this.cmbUOM.Location = new System.Drawing.Point(126, 163);
-            this.cmbUOM.Name = "cmbUOM";
-            this.cmbUOM.Size = new System.Drawing.Size(969, 23);
-            this.cmbUOM.TabIndex = 22;
             // 
             // cmbStatus
             // 
@@ -477,9 +417,9 @@
             this.cmbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(126, 247);
+            this.cmbStatus.Location = new System.Drawing.Point(126, 222);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(969, 23);
+            this.cmbStatus.Size = new System.Drawing.Size(980, 23);
             this.cmbStatus.TabIndex = 25;
             // 
             // label6
@@ -487,10 +427,10 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(2, 271);
+            this.label6.Location = new System.Drawing.Point(2, 249);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.Size = new System.Drawing.Size(119, 23);
             this.label6.TabIndex = 15;
             this.label6.Text = "Active:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -500,10 +440,10 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(2, 244);
+            this.label4.Location = new System.Drawing.Point(2, 219);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 27);
+            this.label4.Size = new System.Drawing.Size(119, 30);
             this.label4.TabIndex = 29;
             this.label4.Text = "Status:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -526,52 +466,13 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(2, 131);
+            this.label8.Location = new System.Drawing.Point(2, 163);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 29);
+            this.label8.Size = new System.Drawing.Size(119, 27);
             this.label8.TabIndex = 31;
             this.label8.Text = "Quantity:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(2, 160);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 28);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Unit of Measure:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(2, 188);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 28);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Price:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(2, 216);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(119, 28);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Extension:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // statusStrip1
             // 
@@ -654,6 +555,45 @@
             this.sharedImageCollection1.ImageSource.Images.SetKeyName(7, "trash_16x16.png");
             this.sharedImageCollection1.ParentControl = this;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(2, 190);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 29);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Unit of Measure:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbUOM
+            // 
+            this.cmbUOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbUOM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUOM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbUOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUOM.FormattingEnabled = true;
+            this.cmbUOM.Location = new System.Drawing.Point(126, 193);
+            this.cmbUOM.Name = "cmbUOM";
+            this.cmbUOM.Size = new System.Drawing.Size(980, 23);
+            this.cmbUOM.TabIndex = 22;
+            // 
+            // colPrice
+            // 
+            this.colPrice.Caption = "Price";
+            this.colPrice.FieldName = "Price";
+            this.colPrice.Name = "colPrice";
+            this.colPrice.Width = 61;
+            // 
+            // colExtension
+            // 
+            this.colExtension.Caption = "Extension";
+            this.colExtension.FieldName = "Extension";
+            this.colExtension.Name = "colExtension";
+            this.colExtension.Width = 85;
+            // 
             // FrmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,22 +652,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtExtension;
-        private System.Windows.Forms.ComboBox cmbUOM;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private DevExpress.XtraGrid.Columns.GridColumn colShortName;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colUOM;
-        private DevExpress.XtraGrid.Columns.GridColumn colPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colExtension;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
+        private System.Windows.Forms.ComboBox cmbUOM;
+        private System.Windows.Forms.Label label9;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colExtension;
     }
 }

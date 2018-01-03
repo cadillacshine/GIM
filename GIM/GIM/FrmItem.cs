@@ -61,8 +61,6 @@ namespace GIM {
             txtDescription.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Description").ToString();
             txtQuantity.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Quantity").ToString();
             cmbUOM.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "UOM").ToString();
-            txtPrice.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Price").ToString();
-            txtExtension.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Extension").ToString();
             cmbStatus.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Status").ToString();
             cbActive.Checked = (bool)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Active");
         }
@@ -85,8 +83,6 @@ namespace GIM {
             txtDescription.Enabled = status;
             txtQuantity.Enabled = status;
             cmbUOM.Enabled = status;
-            txtPrice.Enabled = status;
-            txtExtension.Enabled = status;
             cmbStatus.Enabled = status;
             cbActive.Enabled = status;
         }
@@ -98,8 +94,6 @@ namespace GIM {
             txtDescription.Text = "";
             txtQuantity.Text = "";
             cmbUOM.Text = "";
-            txtPrice.Text = "";
-            txtExtension.Text = "";
             cmbStatus.Text = "";
             cbActive.Checked = true;
         }
@@ -175,8 +169,6 @@ namespace GIM {
                         description = txtDescription.Text,
                         quantity = Convert.ToDouble(txtQuantity.Text),
                         unitOfMeasure = cmbUOM.Text,
-                        price = Convert.ToDouble(txtPrice.Text),
-                        extension = Convert.ToDouble(txtExtension.Text),
                         status = cmbStatus.Text,
                         active = cbActive.Checked
                     };
@@ -195,8 +187,6 @@ namespace GIM {
                         description = txtDescription.Text,
                         quantity = Convert.ToDouble(txtQuantity.Text),
                         unitOfMeasure = cmbUOM.Text,
-                        price = Convert.ToDouble(txtPrice.Text),
-                        extension = Convert.ToDouble(txtExtension.Text),
                         status = cmbStatus.Text,
                         active = cbActive.Checked
                     };
