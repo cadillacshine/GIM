@@ -38,7 +38,7 @@ namespace GIM {
 
         public object find(int id) {
             UnitOfMeasure uom = new UnitOfMeasure();
-            sqlcmd = new SqlCommand("SELECT UOMID, Name, ShortName, Active FROM Status WHERE UOMID = '" + id + "' ", Misc.getConn());
+            sqlcmd = new SqlCommand("SELECT UOMID, Name, ShortName, Active FROM UnitOfMeasure WHERE UOMID = '" + id + "' ", Misc.getConn());
             Misc.connOpen();
             SqlDataReader dReader = sqlcmd.ExecuteReader();
             while (dReader.Read()) {
